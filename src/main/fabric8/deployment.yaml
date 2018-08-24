@@ -1,4 +1,5 @@
 spec:
+  replicas: 1
   template:
     spec:
       # Declare a volume mounting the config map
@@ -20,3 +21,6 @@ spec:
           volumeMounts:
             - name: config
               mountPath: /deployments/conf
+        - resources:
+            limits:
+              memory: '250Mi'
